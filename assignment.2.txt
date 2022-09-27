@@ -1,0 +1,12 @@
+import random
+temp=random.randint(18,30)
+print(temp)
+hum=random.randint(60,100)
+print(hum)
+threshold=30
+if(temp>=30)
+ {
+    print("alarm detected")
+else
+    print(" not alarm detected")
+}
