@@ -1,0 +1,39 @@
+           BLINKING LED CODE
+
+import RPi.GPIO as GPIO  
+import time    
+GPIO.setmode(GPIO.BCM)   
+cnt = 0  
+MAIL_CHECK_FREQ = 1   
+RED_LED = 4  
+GPIO.setup(RED_LED, GPIO.OUT)  
+while True:  
+ifcnt == 0 :  
+GPIO.output(RED_LED, False)  
+cnt = 1  
+else:  
+GPIO.output(RED_LED, True)  
+cnt = 0  
+time.sleep(MAIL_CHECK_FREQ)  
+GPIO.cleanup() 
+
+       TRAFFIC LIGHT CODE
+
+from gpiozero import Button, TrafficLights, Buzzer    
+from time import sleep    
+    
+buzzer = Buzzer(15)    
+button = Button(21)    
+lights = TrafficLights(25, 8, 7)    
+    
+while True:    
+           button.wait_for_press()   
+           buzzer.on()   
+           light.green.on()    
+           sleep(1)    
+           lights.amber.on()    
+           sleep(1)    
+           lights.red.on()    
+           sleep(1)    
+           lights.off()   
+           buzzer.off()
